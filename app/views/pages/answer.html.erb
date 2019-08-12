@@ -1,4 +1,4 @@
-<h1>Stupid Coaching</h1>
+<!-- <h1>Stupid Coaching</h1>
 <form action="/answer" method="get">
   <input type="text" name="ask_question" placeholder="What do you want?">
   <input type="submit" value="Ask!">
@@ -7,7 +7,26 @@
 
 <p><%= @answer %></p>
 
-<a href="http://localhost:3000/answer?ask_question=">Here's the answer</a>
+ -->
 
+<h1>Stupid Coaching</h1>
+
+<blockquote>
+  <p>
+    <% if @question.blank? %>
+      😶
+    <% else %>
+      <%= @question %>
+    <% end %>
+  </p>
+  <cite>You</cite>
+</blockquote>
+
+<blockquote class="coach">
+  <p><%= @answer %></p>
+  <cite>Your coach</cite>
+</blockquote>
+
+<%= link_to "Ask a new question", ask_path %>
 
 
